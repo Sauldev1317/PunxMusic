@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.airbnb.lottie.LottieAnimationView;
 
 public class Splash extends AppCompatActivity {
 
@@ -65,7 +64,7 @@ public class Splash extends AppCompatActivity {
         Intent intent = new Intent(this, Home.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-        //overridePendingTransition( 0, R.anim.fade_out_animation);
+        overridePendingTransition( 0, R.anim.fade_out_animation);
     }
 
 }
