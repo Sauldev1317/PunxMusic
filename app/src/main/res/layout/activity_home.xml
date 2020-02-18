@@ -19,6 +19,7 @@
             android:id="@+id/tablayout_home"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:layout_marginBottom="@dimen/component_space_bottom_medium"
             app:tabPaddingTop="5dp"
             app:tabPaddingBottom="5dp"
             app:tabIndicator="@drawable/tab_indicator"
