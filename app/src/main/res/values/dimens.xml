@@ -19,4 +19,5 @@
     <dimen name="fab_size">56dp</dimen>
     <dimen name="component_space_horizontal_high">40sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
 </resources>
