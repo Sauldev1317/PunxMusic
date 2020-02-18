@@ -3,5 +3,11 @@
     <color name="colorPrimary">#29162B</color>
     <color name="colorPrimaryDark">#29162B</color>
     <color name="colorAccent">#D75D6A</color>
+
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#9C9C9C</color>
+    <color name="lightTextColor">#ffffff</color>
+    <color name="divider">#D4D4D4</color>
+
     <color name="guitar_background">#F7FCFC</color>
 </resources>

@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout_home"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:tabPaddingTop="5dp"
+            app:tabPaddingBottom="5dp"
+            app:tabIndicator="@drawable/tab_indicator"
+            app:tabGravity="center"
+            app:tabTextAppearance="@style/tab_text"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="5dp"
+            app:tabTextColor="@color/primaryTextColor"
+>
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_categoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/categoria"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_noticias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/noticias"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
