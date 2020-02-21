@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthResult;
@@ -21,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import dev.saul1317.punxmusic.Adapter.PageAdapter;
 
-public class Home extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
+public class Home extends AppCompatActivity implements TabLayout.OnTabSelectedListener, View.OnClickListener {
 
 
     private static final String TAG = "HOME";
@@ -29,6 +31,7 @@ public class Home extends AppCompatActivity implements TabLayout.OnTabSelectedLi
     TabItem tab_home, tab_categoria, tab_noticias;
     ViewPager viewPager_content;
     PageAdapter pageAdapter;
+    FloatingActionButton fab_shopping_cart;
 
     //FIREBASE
     private FirebaseAuth mAuth;
@@ -92,6 +95,10 @@ public class Home extends AppCompatActivity implements TabLayout.OnTabSelectedLi
         tab_noticias = (TabItem) findViewById(R.id.tab_noticias);
         viewPager_content = (ViewPager) findViewById(R.id.viewPager_content);
 
+        fab_shopping_cart = (FloatingActionButton) findViewById(R.id.fab_shopping_cart);
+        fab_shopping_cart.setOnClickListener(this);
+
+
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tablayout_home.getTabCount());
         viewPager_content.setAdapter(pageAdapter);
 
@@ -129,9 +136,12 @@ public class Home extends AppCompatActivity implements TabLayout.OnTabSelectedLi
 
     }
 
-
-
     private void updateUI(FirebaseUser currentUser) {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        Toast.makeText(this, "Shopping cart", Toast.LENGTH_SHORT).show();
     }
 }

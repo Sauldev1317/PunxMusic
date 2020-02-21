@@ -56,4 +56,13 @@
 
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_shopping_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/car_shopping_icon"
+        android:contentDescription="@string/shopping_cart"
+        android:layout_margin="@dimen/floating_margin" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
