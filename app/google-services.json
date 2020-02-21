@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "132373620805",
+    "firebase_url": "https://punxmusic-72be7.firebaseio.com",
+    "project_id": "punxmusic-72be7",
+    "storage_bucket": "punxmusic-72be7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132373620805:android:78bd13df05e56ef6ef9b2c",
+        "android_client_info": {
+          "package_name": "dev.saul1317.punxmusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132373620805-j57bvjjnlif37a9n0u1va1q6flen42sd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.saul1317.punxmusic",
+            "certificate_hash": "4f284dd6a828c93394139f6c28a14cffb0f06b6d"
+          }
+        },
+        {
+          "client_id": "132373620805-m9envu9elkgknhos96fi7dkllnmv2808.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCinkuELG63orwaJ4VimPWUERAAbcBCvyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132373620805-m9envu9elkgknhos96fi7dkllnmv2808.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

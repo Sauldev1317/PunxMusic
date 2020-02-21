@@ -8,4 +8,9 @@
     <string name="home">Home</string>
     <string name="categoria">Categoría</string>
     <string name="noticias">Noticias</string>
+    <string name="nuevos_instrumentos">Nuevos Instrumentos</string>
+    <string name="mas_populares">Más populares</string>
+    <string name="fender_instrumentos">fender instrumentos</string>
+    <string name="conciertos">Concierto en vivo</string>
+    <string name="txt_img_instrumento">Foto del instrumento</string>
 </resources>

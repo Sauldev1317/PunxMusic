@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardview_instrumento"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="5dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:padding="5dp"
+            android:background="@color/guitar_background">
+
+            <ImageView
+                android:id="@+id/img_instrumento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/txt_img_instrumento"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:gravity="center"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_nombre_instrumento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gibson ES-335"
+                android:textAlignment="center"
+                android:textSize="@dimen/txt_body2_menu_size"
+                android:textColor="@color/primaryTextColor"
+                android:fontFamily="@font/rubik_medium"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/txt_precio_instrumento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Precio $12,000"
+                android:textAlignment="center"
+                android:textSize="@dimen/txt_caption_size"
+                android:textColor="@color/secondaryTextColor"
+                android:fontFamily="@font/rubik_regular"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
