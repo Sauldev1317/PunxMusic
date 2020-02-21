@@ -18,10 +18,9 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tablayout_home"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginBottom="@dimen/component_space_bottom_medium"
-            app:tabPaddingTop="5dp"
-            app:tabPaddingBottom="5dp"
+            android:layout_height="@dimen/tabLayout_height"
+            app:tabPaddingTop="10dp"
+            app:tabPaddingBottom="10dp"
             app:tabIndicator="@drawable/tab_indicator"
             app:tabGravity="center"
             app:tabTextAppearance="@style/tab_text"

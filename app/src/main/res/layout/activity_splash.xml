@@ -12,14 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="@dimen/component_space_bottom_extra_large"
         android:src="@drawable/punxmusic_logo"
         android:contentDescription="@string/PunxMusic" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         app:lottie_autoPlay="true"
         app:lottie_fileName="sound-visualizer.json"
