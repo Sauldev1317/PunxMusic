@@ -33,7 +33,6 @@
             android:id="@+id/txt_nombre_instrumento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:transitionName="name_instrument"
             android:text="Gibson ES-335"
             android:textAlignment="center"
             android:textSize="@dimen/txt_body2_menu_size"

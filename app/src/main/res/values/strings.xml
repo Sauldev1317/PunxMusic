@@ -18,4 +18,9 @@
     <string name="txt_video">Video</string>
     <string name="txt_add_to_cart">Agregar al carrito</string>
     <string name="txt_fav">fav</string>
+    <string name="txt_instrumento">Instrumentos</string>
+    <string name="txt_guitarra_electricas">Guitarras Eléctricas</string>
+    <string name="txt_guitarra_acustica">Guitarras Acustica</string>
+    <string name="txt_bajo_electricas">Bajo Eléctricas</string>
+    <string name="txt_baterias">Baterias</string>
 </resources>
