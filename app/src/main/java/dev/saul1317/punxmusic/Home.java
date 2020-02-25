@@ -86,6 +86,7 @@ public class Home extends AppCompatActivity implements TabLayout.OnTabSelectedLi
         home_toolbar.setLogo(R.drawable.punxmusic_logo_appbar);
         home_toolbar.setNavigationIcon(R.drawable.burger_icon);
         setSupportActionBar(home_toolbar);
+
         tablayout_home = (TabLayout) findViewById(R.id.tablayout_home);
         viewPager_content = (ViewPager) findViewById(R.id.viewPager_content);
         //CONFIGURACIÓN DE TABS

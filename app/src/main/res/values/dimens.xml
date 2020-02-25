@@ -13,17 +13,22 @@
     <!--  Regular  -->
     <dimen name="txt_caption_size">12sp</dimen>
     <!--  Medium  -->
-    <dimen name="txt_button_size">14sp</dimen>
+    <dimen name="txt_button_size">16sp</dimen>
 
     <dimen name="component_space_bottom_extra_large">40dp</dimen>
     <dimen name="component_space_bottom_large">24dp</dimen>
     <dimen name="component_space_bottom_medium">16dp</dimen>
     <dimen name="component_space_bottom_small">8dp</dimen>
+
+    <dimen name="component_space_right_small">8dp</dimen>
+
     <dimen name="fab_size">56dp</dimen>
     <dimen name="component_space_horizontal_high">40sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
     <dimen name="tabLayout_height">40dp</dimen>
     <dimen name="floating_margin">16dp</dimen>
     <dimen name="cardview_corner">15dp</dimen>
+    <dimen name="button_height_size">56dp</dimen>
+    <dimen name="button_fav_size">50dp</dimen>
 </resources>
