@@ -189,6 +189,7 @@ public class Novedades extends Fragment implements View.OnTouchListener {
         pairs[1] = new Pair<View, String> (view, "img_instrument");
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(getActivity(), pairs);
         startActivity(intent, options.toBundle());
+
     };
 
     private void abrirCatalogo(){

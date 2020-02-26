@@ -8,7 +8,8 @@
 
     <include layout="@layout/toolbar"/>
 
-    <LinearLayout android:id="@+id/main_content"
+    <LinearLayout
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/background_light"
@@ -19,6 +20,7 @@
             android:id="@+id/tablayout_home"
             android:layout_width="match_parent"
             android:layout_height="@dimen/tabLayout_height"
+            android:layout_marginBottom="@dimen/component_space_bottom_medium"
             app:tabPaddingTop="10dp"
             app:tabPaddingBottom="10dp"
             app:tabIndicator="@drawable/tab_indicator"

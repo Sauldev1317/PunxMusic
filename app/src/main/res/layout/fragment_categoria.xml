@@ -1,14 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Categoria">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="@dimen/activity_margin"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_instrumento"
+            style="@style/txt.tittle"/>
+
+        <FrameLayout
+            android:id="@+id/button_catalogo_guitarra_electrica"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="@dimen/component_space_bottom_medium">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/guitar_background"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/txt_guitarra_electricas"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/txt_body1_size"
+                android:fontFamily="@font/rubik_regular"
+                android:layout_margin="16dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/guitarra_electrica_categoria"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/txt_guitarra_electricas" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/button_catalogo_guitarra_acustica"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="@dimen/component_space_bottom_medium">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/guitar_background"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/txt_guitarra_acustica"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/txt_body1_size"
+                android:fontFamily="@font/rubik_regular"
+                android:layout_margin="16dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/guitarra_acustica_categoria"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/txt_guitarra_electricas" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/button_catalogo_bajo"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="@dimen/component_space_bottom_medium">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/guitar_background"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/txt_bajo_electricas"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/txt_body1_size"
+                android:fontFamily="@font/rubik_regular"
+                android:layout_margin="16dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/bajo_electrico_categoria"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/txt_guitarra_electricas" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/button_catalogo_bateria"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="@dimen/component_space_bottom_medium">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/guitar_background"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/txt_baterias"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="@dimen/txt_body1_size"
+                android:fontFamily="@font/rubik_regular"
+                android:layout_margin="16dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end|center_vertical"
+                android:src="@drawable/bateria_categoria"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/txt_guitarra_electricas" />
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
