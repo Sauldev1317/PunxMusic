@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,6 +55,7 @@ public class Novedades extends Fragment implements View.OnTouchListener {
     RecyclerView recyclerview_productos_populares;
     CardviewAnimation cardviewAnimation;
     AdapterRecyclerviewInstrumento adapterRecyclerviewInstrumento;
+    ShimmerFrameLayout shimmerFrameLayout;
 
     //FIREBASE
     private FirebaseAuth mAuth;
@@ -83,6 +86,8 @@ public class Novedades extends Fragment implements View.OnTouchListener {
         cardview_conciertos = (CardView) view.findViewById(R.id.cardview_conciertos);
         cardview_conciertos.setOnTouchListener(this);
 
+        shimmerFrameLayout = (ShimmerFrameLayout) view.findViewById(R.id.shimmer_view_container);
+
         recyclerview_productos_populares = (RecyclerView) view.findViewById(R.id.recyclerview_productos_populares);
         recyclerview_productos_populares.setHasFixedSize(true);
         recyclerview_productos_populares.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
@@ -100,13 +105,15 @@ public class Novedades extends Fragment implements View.OnTouchListener {
     }
 
     private void getInstrumentos() {
-
+        shimmerFrameLayout.startShimmer();
         db.collection("instrumento")
                 .orderBy("nombre", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        shimmerFrameLayout.stopShimmer();
+                        shimmerFrameLayout.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
                             if (task.getResult() != null) {
                                 List<Instrumento> instrumentoList = new ArrayList<>();
@@ -117,7 +124,7 @@ public class Novedades extends Fragment implements View.OnTouchListener {
                                     instrumentoList.add(instrumento);
                                 }
 
-                                adapterRecyclerviewInstrumento = new AdapterRecyclerviewInstrumento(R.layout.cardview_productos, instrumentoList,
+                                adapterRecyclerviewInstrumento = new AdapterRecyclerviewInstrumento(R.layout.cardview_productos_horizontal, instrumentoList,
                                         getContext(), new OnItemClickListener() {
                                     @Override
                                     public void onItemClick(Instrumento instrumento, View view) {
