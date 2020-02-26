@@ -12,9 +12,8 @@ import androidx.cardview.widget.CardView;
 public class CardviewAnimation {
 
     //DURACION DE LA ANIMACION DE LOS BOTONES AL MOMENTO DE HACER CLICK
-    public static final int DURATION_ANIMATION_CARD = 200;
+    private static final int DURATION_ANIMATION_CARD = 200;
     CardviewAnimationEvent cardviewAnimationEvent;
-
 
     /*
      * SACAMOS TRES TIPOS DE EVENTOS PARA EL TOUCH LISTENER
