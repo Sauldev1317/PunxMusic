@@ -13,4 +13,9 @@
     <string name="fender_instrumentos">fender instrumentos</string>
     <string name="conciertos">Concierto en vivo</string>
     <string name="txt_img_instrumento">Foto del instrumento</string>
+    <string name="shopping_cart">Carrito de compras</string>
+    <string name="action_shopping_cart">Ver carrito de compras</string>
+    <string name="txt_video">Video</string>
+    <string name="txt_add_to_cart">Agregar al carrito</string>
+    <string name="txt_fav">fav</string>
 </resources>

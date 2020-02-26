@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".Descripcion">
+
+    <include
+        layout="@layout/toolbar_transparent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:transitionName="cardview_instrument"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_instrument_description"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:transitionName="img_instrument"
+                android:padding="16dp"
+                android:background="@color/guitar_background"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/txt_img_instrumento" />
+
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:useDefaultMargins="true"
+                app:columnCount="2">
+
+                <TextView
+                    android:id="@+id/txt_name_instrument_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:transitionName="name_instrument"
+                    android:gravity="center"
+                    android:text="Lorem ipsum dolor sit amet"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/txt_subheader_size"
+                    android:fontFamily="@font/rubik_bold"
+                    app:layout_columnSpan="2"/>
+
+                <LinearLayout
+                    android:id="@+id/btn_play_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:gravity="center"
+                    android:background="@drawable/button_white"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/component_space_bottom_large"
+                    app:layout_columnSpan="2">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/play_icon"
+                        android:layout_marginEnd="5dp"
+                        android:contentDescription="@string/txt_video" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/txt_video"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="@dimen/txt_body1_size"
+                        android:fontFamily="@font/rubik_bold"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txt_description_instrument_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit elementum quam, a venenatis libero elementum tincidunt. Aenean aliquam sed ante sit amet dapibus. "
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/txt_body2_menu_size"
+                    android:fontFamily="@font/rubik_regular"
+                    app:layout_columnSpan="2"/>
+
+                <TextView
+                    android:id="@+id/txt_price_instrument_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginBottom="@dimen/component_space_bottom_large"
+                    android:text="Lorem ipsum"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/txt_body1_size"
+                    android:fontFamily="@font/rubik_bold"
+                    app:layout_columnSpan="2"/>
+
+
+                <Button
+                    android:id="@+id/btn_add_shopping_cart"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/button_height_size"
+                    android:layout_marginStart="@dimen/activity_margin"
+                    android:layout_marginEnd="@dimen/component_space_right_small"
+                    android:text="@string/txt_add_to_cart"
+                    app:layout_columnSpan="1"
+                    app:layout_columnWeight="1"
+                    style="@style/button.punxMusic"/>
+
+                <FrameLayout
+                    android:id="@+id/btn_add_fav"
+                    android:layout_width="@dimen/button_fav_size"
+                    android:layout_height="@dimen/button_fav_size"
+                    android:foreground="@drawable/button_circle_ripple_animation"
+                    android:layout_marginEnd="@dimen/activity_margin"
+                    android:background="@drawable/button_fav"
+                    android:layout_marginBottom="@dimen/component_space_bottom_medium"
+                    app:layout_columnSpan="1"
+                    app:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/heart_icon"
+                        android:padding="@dimen/fab_margin"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="@string/txt_fav" />
+                </FrameLayout>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

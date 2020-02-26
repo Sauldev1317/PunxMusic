@@ -1,6 +1,9 @@
 package dev.saul1317.punxmusic.Model;
 
-public class Instrumento {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Instrumento implements Parcelable {
 
     private String id;
     private long numero_modelo;
@@ -118,4 +121,54 @@ public class Instrumento {
                 ", url_video='" + url_video + '\'' +
                 '}';
     }
+
+    public Instrumento() {
+    }
+
+    public Instrumento (Parcel in){
+        readFromParcel(in);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeLong(numero_modelo);
+        dest.writeString(nombre);
+        dest.writeString(Descripcion);
+        dest.writeLong(precio);
+        dest.writeLong(Inventario);
+        dest.writeLong(numero_ventas);
+        dest.writeLong(numero_vistas);
+        dest.writeString(url_imagen);
+        dest.writeString(url_video);
+    }
+
+    private void readFromParcel(Parcel in) {
+        id = in.readString();
+        numero_modelo = in.readLong();
+        nombre = in.readString();
+        Descripcion = in.readString();
+        precio = in.readLong();
+        Inventario = in.readLong();
+        numero_ventas = in.readLong();
+        numero_vistas = in.readLong();
+        url_imagen = in.readString();
+        url_video = in.readString();
+    }
+
+
+    public static final Parcelable.Creator<Instrumento> CREATOR = new Parcelable.Creator<Instrumento>() {
+        public Instrumento createFromParcel(Parcel in) {
+            return new Instrumento(in);
+        }
+
+        public Instrumento[] newArray(int size) {
+            return new Instrumento[size];
+        }
+    };
 }
