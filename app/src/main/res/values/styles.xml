@@ -43,5 +43,15 @@
         <item name="android:fontFamily">@font/rubik_bold</item>
     </style>
 
+    <style name="txt.tittle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/txt_title_size</item>
+        <item name="android:fontFamily">@font/rubik_bold</item>
+        <item name="android:layout_marginBottom">@dimen/component_space_bottom_small</item>
+    </style>
+
+
+
+
 
 </resources>

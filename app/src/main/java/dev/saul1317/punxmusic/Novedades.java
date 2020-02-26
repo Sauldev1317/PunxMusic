@@ -3,6 +3,8 @@ package dev.saul1317.punxmusic;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,11 +26,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import dev.saul1317.punxmusic.Adapter.AdapterRecyclerviewInstrumento;
 import dev.saul1317.punxmusic.Adapter.OnItemClickListener;
@@ -52,7 +58,6 @@ public class Novedades extends Fragment implements View.OnTouchListener {
     private FirebaseAuth mAuth;
     FirebaseFirestore db;
 
-    List<Instrumento> instrumentoList = new ArrayList<>();
 
     public Novedades() {
         // Required empty public constructor
@@ -95,13 +100,17 @@ public class Novedades extends Fragment implements View.OnTouchListener {
     }
 
     private void getInstrumentos() {
+
         db.collection("instrumento")
+                .orderBy("nombre", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             if (task.getResult() != null) {
+                                List<Instrumento> instrumentoList = new ArrayList<>();
+
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Instrumento instrumento = document.toObject(Instrumento.class);
                                     instrumento.setId(document.getId());
@@ -112,7 +121,7 @@ public class Novedades extends Fragment implements View.OnTouchListener {
                                         getContext(), new OnItemClickListener() {
                                     @Override
                                     public void onItemClick(Instrumento instrumento, View view) {
-
+                                        abrirDescripcionInstrumento(instrumento, view);
                                     }
                                 });
 
@@ -134,7 +143,7 @@ public class Novedades extends Fragment implements View.OnTouchListener {
                 cardviewAnimation.setCarviewAction(event.getAction(), view, new CardviewAnimationEvent() {
                     @Override
                     public void OnCardviewAnimationFinish(View view) {
-                        Toast.makeText(getContext(), "Hola we", Toast.LENGTH_SHORT).show();
+                        abrirCatalogo();
                     }
                 });
                 break;
@@ -172,5 +181,19 @@ public class Novedades extends Fragment implements View.OnTouchListener {
         return true;
     }
 
+    private void abrirDescripcionInstrumento(Instrumento instrumento, View view){
+        Intent intent = new Intent(getActivity(), Descripcion.class);
+        intent.putExtra("instrumento", instrumento);
+        Pair[] pairs = new Pair[2];
+        pairs[0] = new Pair<View, String> (view, "cardview_instrument");
+        pairs[1] = new Pair<View, String> (view, "img_instrument");
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(getActivity(), pairs);
+        startActivity(intent, options.toBundle());
+    };
+
+    private void abrirCatalogo(){
+        Intent intent = new Intent(getActivity(), Catalogo.class);
+        startActivity(intent);
+    }
 
 }

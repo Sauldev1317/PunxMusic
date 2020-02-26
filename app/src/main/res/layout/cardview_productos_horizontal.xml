@@ -3,10 +3,9 @@
     android:id="@+id/cardview_instrumento"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_width="140dp"
+    android:layout_height="220dp"
     android:weightSum="10"
-    android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
     android:transitionName="cardview_instrument"
     android:orientation="vertical">
