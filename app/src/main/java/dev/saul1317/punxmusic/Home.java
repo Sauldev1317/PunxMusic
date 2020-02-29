@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -144,6 +145,9 @@ public class Home extends AppCompatActivity implements TabLayout.OnTabSelectedLi
 
     @Override
     public void onClick(View view) {
-        Toast.makeText(this, "Shopping cart", Toast.LENGTH_SHORT).show();
+       if(view.getId() == R.id.fab_shopping_cart){
+           Intent intent = new Intent(this, Carrito.class);
+           startActivity(intent);
+       }
     }
 }

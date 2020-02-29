@@ -23,4 +23,11 @@
     <string name="txt_guitarra_acustica">Guitarras Acustica</string>
     <string name="txt_bajo_electricas">Bajo Eléctricas</string>
     <string name="txt_baterias">Baterias</string>
+
+    <string name="txt_name_instrumento_example">Lorem ipsum dolor sit amet</string>
+    <string name="txt_model_instrumento_example">N.º de modelo: 0321222523</string>
+    <string name="txt_precio_instrumento_example">$15000</string>
+    <string name="txt_button_ver">Ver</string>
+    <string name="txt_button_remover">Remover</string>
+    <string name="txt_realizar_pago">Realizar el pago</string>
 </resources>

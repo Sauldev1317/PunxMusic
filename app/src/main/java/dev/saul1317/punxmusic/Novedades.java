@@ -1,8 +1,6 @@
 package dev.saul1317.punxmusic;
 
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;

@@ -31,4 +31,6 @@
     <dimen name="cardview_corner">15dp</dimen>
     <dimen name="button_height_size">56dp</dimen>
     <dimen name="button_fav_size">50dp</dimen>
+    <dimen name="cardview_shopping_cart_height">140dp</dimen>
+    <dimen name="cardview_shopping_cart_padding">16dp</dimen>
 </resources>
