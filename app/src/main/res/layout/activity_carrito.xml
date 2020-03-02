@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Carrito">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_shopping_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/activity_margin"
+            android:paddingEnd="@dimen/activity_margin"
+            android:layout_weight="2"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            app:contentPadding="16dp"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="20dp">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:useDefaultMargins="true"
+                app:columnCount="3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOTAL: "
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/txt_body1_size"
+                    android:fontFamily="@font/rubik_medium"
+                    app:layout_columnSpan="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(Incluye envio)"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="@dimen/txt_body2_menu_size"
+                    android:fontFamily="@font/rubik_regular"
+                    app:layout_columnSpan="1" />
+
+                <TextView
+                    android:id="@+id/txt_precio_total_shopping_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$15,000"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/txt_body1_size"
+                    android:fontFamily="@font/rubik_medium"
+                    android:layout_marginBottom="@dimen/component_space_bottom_small"
+                    app:layout_columnSpan="1"
+                    app:layout_gravity="end"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider"
+                    android:layout_marginBottom="@dimen/component_space_bottom_small"
+                    app:layout_columnSpan="3"/>
+
+                <Button
+                    android:id="@+id/button_comprar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_size"
+                    android:text="@string/txt_realizar_pago"
+                    style="@style/button.punxMusic"
+                    app:layout_columnSpan="3"/>
+
+            </androidx.gridlayout.widget.GridLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

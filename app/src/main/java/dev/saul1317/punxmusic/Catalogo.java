@@ -145,6 +145,5 @@ public class Catalogo extends AppCompatActivity {
         pairs[1] = new Pair<View, String> (view, "img_instrument");
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Catalogo.this, pairs);
         startActivity(intent, options.toBundle());
-
     };
 }

@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import dev.saul1317.punxmusic.Data.Data;
 import dev.saul1317.punxmusic.Model.Instrumento;
 
 public class Descripcion extends AppCompatActivity implements View.OnClickListener {
@@ -26,6 +27,10 @@ public class Descripcion extends AppCompatActivity implements View.OnClickListen
     LinearLayout btn_play_video;
     Button btn_add_shopping_cart;
     FrameLayout btn_add_fav;
+
+    Instrumento instrumento;
+    Data data;
+    //boolean onShoppingCart = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +67,8 @@ public class Descripcion extends AppCompatActivity implements View.OnClickListen
         btn_add_shopping_cart.setOnClickListener(this);
         btn_add_fav = (FrameLayout) findViewById(R.id.btn_add_fav);
         btn_add_fav.setOnClickListener(this);
-
-        Instrumento instrumento = getIntent().getParcelableExtra("instrumento");
+        data = new Data(Descripcion.this);
+        instrumento = getIntent().getParcelableExtra("instrumento");
         if (instrumento != null){
             updateUI(instrumento);
         }
@@ -98,7 +103,20 @@ public class Descripcion extends AppCompatActivity implements View.OnClickListen
                 Toast.makeText(this, "Ver video", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_add_shopping_cart:
-                Toast.makeText(this, "Agregar al carrito", Toast.LENGTH_SHORT).show();
+                /*if(data.checkedInstrument(instrumento.getId())){
+
+                }else{
+                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                }*/
+                if(instrumento != null){
+                    if(data.saveInstrument(instrumento) != -1){
+                        Toast.makeText(this, "Se insertó correctamente", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(this, "No se insertó correctamente", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(this, "Ya se encuentra en el carrito", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.btn_add_fav:
                 Toast.makeText(this, "Agregado a favoritos", Toast.LENGTH_SHORT).show();
@@ -113,4 +131,5 @@ public class Descripcion extends AppCompatActivity implements View.OnClickListen
         //super.onBackPressed();
         supportFinishAfterTransition();
     }
+
 }
